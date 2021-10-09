@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;1,400&display=swap');
+        body{
+            font-family: 'Source Code Pro', monospace;
+        }
+        h1{
+            text-align: center;
+            font-family: 'Source Code Pro', monospace;
+        }
+        #formbmi{
+            border: 1px solid rgb(240, 233, 233);
+            text-align: center;
+            width: 350px;
+            height: 300px;
+            margin-left: 500px;
+            box-shadow: 5px 5px 5px 5px #e3e3e3;
+        }
+        #w1, #he1{
+            font-size: 25px;
+            padding-top: 20px;
+        }
+        input[type=number]{
+            width: 70px;
+            height: 30px;
+            border: 1px solid rgb(230, 226, 226);
+            font-size: 20px;
+        }
+        button{
+            width: 230px;
+            height: 35px;
+            font-size: 20px;
+            color: white;
+            background: tomato;
+            border: 1px solid tomato;
+            font-family: 'Source Code Pro', monospace;
+        }
+        button:hover{
+            background: rgb(236, 113, 91);
+        }
+        #resultform{
+            font-size: 25px;
+            padding-top: 20px;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <h1>Your BMI Calculator</h1>
+    <div id="formbmi">
+        <p id="w1">Weight:
+        <input type="number" id="weight">kg</p>
+        <p id="he1">Height:
+        <input type="number" id="height">cm</p>
+        <button onclick="calcBMI()">CALCULATE</button>
+     
+     <div id="resultform">
+    <span id="l1">Your BMI:</span>
+    <span id="answer"></span>
+</div>
+</div>
+<script>
+    let yourweight=document.getElementById("weight");
+    let yourheight=document.getElementById("height");
+    let answer=document.getElementById("answer");
+    function calcBMI(){
+        if(yourweight.value=="" || yourheight.value==""){
+            alert("Enter weight and height");
+        }
+        else{
+     let x=yourheight.value/100;
+     let result = (yourweight.value)/Math.pow(x,2);
+     let bmi=result.toFixed(1);
+     answer.innerHTML=bmi ;
+    //  yourweight.value="";
+    //  yourheight.value="";
+     
+        }
+     
+    }
+</script>
+
+</body>
+</html>
